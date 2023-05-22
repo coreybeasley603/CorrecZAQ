@@ -25,7 +25,6 @@
       pathsToIgnore = [
         ".envrc"
         ".ignore"
-        ".github"
         ".gitignore"
         "logo.svg"
         "logo_dark.svg"
@@ -33,7 +32,6 @@
         "rust-toolchain.toml"
         "rustfmt.toml"
         "runtime"
-        "screenshot.png"
         "book"
         "contrib"
         "docs"
@@ -69,7 +67,6 @@
         "x86_64-linux"
         "x86_64-darwin"
         "aarch64-linux"
-        "aarch64-darwin"
         "i686-linux"
       ];
       perSystem = {
@@ -127,7 +124,6 @@
         nci.crates."helix-term" = {
           overrides = {
             add-meta.override = _: {meta.mainProgram = "hx";};
-            add-inputs.overrideAttrs = prev: {
               buildInputs = (prev.buildInputs or []) ++ [stdenv.cc.cc.lib];
             };
             disable-grammar-builds = {
